@@ -103,6 +103,7 @@ set $workspace1 "1: Browse "
 set $workspace2 "2: Edit "
 set $workspace3 "3: Music "
 set $workspace4 "4: Chat "
+set $workspace5 "5: Game "
 
 # switch to workspace
 # You can replace these numbers with whatever name you want
@@ -110,7 +111,7 @@ bindsym $mod+1 workspace $workspace1
 bindsym $mod+2 workspace $workspace2
 bindsym $mod+3 workspace $workspace3
 bindsym $mod+4 workspace $workspace4
-bindsym $mod+5 workspace 5
+bindsym $mod+5 workspace $workspace5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
@@ -122,7 +123,7 @@ bindsym $mod+Shift+1 move container to workspace $workspace1
 bindsym $mod+Shift+2 move container to workspace $workspace2
 bindsym $mod+Shift+3 move container to workspace $workspace3
 bindsym $mod+Shift+4 move container to workspace $workspace4
-bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+5 move container to workspace $workspace5
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
@@ -134,6 +135,7 @@ workspace $workspace1 output DP-2
 workspace $workspace2 output DP-2
 workspace $workspace3 output HDMI-0
 workspace $workspace4 output HDMI-0
+workspace $workspace5 output DP-2
 
 
 # reload the configuration file
@@ -143,7 +145,7 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 # suspend
-bindsym $mod+shift+Mod1+e exec "i3-nagbar -t warning -m 'You pressed the suspend shortcut. Do you really want to suspend the computer?' -b 'Yes, exit i3' 'systemctl suspend'"
+bindsym $mod+shift+Mod1+e exec "i3-nagbar -t warning -m 'You pressed the suspend shortcut. Do you really want to suspend the computer?' -b 'Yes, exit i3 and suspend.' 'systemctl suspend'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -203,6 +205,8 @@ bar {
 
         position bottom
 
+        tray_output none
+
         colors {
 		background $bg-color
 	    	separator #757575
@@ -216,9 +220,9 @@ bar {
 bindsym $mod+shift+x exec i3lock --color "$bg-color"
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
@@ -242,6 +246,9 @@ assign [class="Google Play Music Desktop Player"] $workspace3
 # Chat
 assign [class="Slack"] $workspace4
 assign [title="Messenger - Mozilla Firefox"] $workspace4
+
+# Game
+assign [class="Steam"] $workspace5
 
 
 # Automatically load things with i3
