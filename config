@@ -262,16 +262,22 @@ exec google-play-music-desktop-player --no-startup-id
 exec --no-startup-id slack
 exec --no-startup-id firefox -new-window messenger.com 
 
+# Game
+exec --no-startup-id steam
+
+
+# Compton but this doesn't work so I need to fix it
 exec compton
 
 # Set wallpaper
 # --bg-scale scales wallpaper. "man feh" for others
-exec_always feh --bg-scale /home/price/Pictures/wallpaper.jpg
+# exec_always feh --bg-scale /home/price/Pictures/wallpaper.jpg
+exec_always feh --bg-scale /home/price/Pictures/jNWtj8o.jpg
 
 # Gaps!
 for_window [class="^.*"] border pixel 0
 
-gaps inner 10
+gaps inner 15
 # gaps outer 10
 
 # start dmenu (a program launcher)
