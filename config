@@ -245,7 +245,7 @@ assign [class="Google Play Music Desktop Player"] $workspace3
 
 # Chat
 assign [class="Slack"] $workspace4
-assign [title="Messenger - Mozilla Firefox"] $workspace4
+# assign [title="Messenger - Mozilla Firefox"] $workspace4
 
 # Game
 assign [class="Steam"] $workspace5
@@ -260,10 +260,11 @@ exec google-play-music-desktop-player --no-startup-id
 
 # Chat
 exec --no-startup-id slack
-exec --no-startup-id firefox -new-window messenger.com 
+# exec --no-startup-id firefox -new-window messenger.com 
 
 # Game
-exec --no-startup-id steam
+# Commented out because I don't really need this on startup
+# exec --no-startup-id steam
 
 
 # Compton but this doesn't work so I need to fix it
@@ -277,7 +278,7 @@ exec_always feh --bg-scale /home/price/Pictures/jNWtj8o.jpg
 # Gaps!
 for_window [class="^.*"] border pixel 0
 
-gaps inner 15
+gaps inner 20
 # gaps outer 10
 
 # start dmenu (a program launcher)
