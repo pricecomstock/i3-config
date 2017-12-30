@@ -183,9 +183,11 @@ set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
 set $urgent-bg-color     #E53935
 
+set $rofi-colors "-color-window $bg-color,$text-color,$bg-color,$inactive-text-color,$inactive-bg-color"
+
 # no longer friends with dmenu
 # now rofi is my best friend
-bindsym $mod+d exec rofi -show run -lines 5 -eh 2 -width 100 -padding 600 -opacity "30" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
+bindsym $mod+d exec rofi -show run -lines 5 -eh 2 -width 100 -padding 600 -opacity "30" -bw 0 -separator-style none -font "System San Francisco Display 22"
 
 # window colors
 #                       border              background         text                 indicator
@@ -268,7 +270,7 @@ exec --no-startup-id slack
 
 
 # Compton but this doesn't work so I need to fix it
-exec compton
+exec --no-startup-id compton -f -I 0.045 -O 0.05 -c -o 0.6 -r 6 -l -6 -t -6
 
 # Set wallpaper
 # --bg-scale scales wallpaper. "man feh" for others
