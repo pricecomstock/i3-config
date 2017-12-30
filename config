@@ -278,7 +278,7 @@ exec_always feh --bg-scale /home/price/Pictures/jNWtj8o.jpg
 # Gaps!
 for_window [class="^.*"] border pixel 0
 
-gaps inner 20
+gaps inner 40
 # gaps outer 10
 
 # start dmenu (a program launcher)
