@@ -102,12 +102,16 @@ bindsym $mod+shift+Tab move workspace to output DP-2
 # Workspace name variables
 # copy the literal symbol from this page and paste it here. http://fontawesome.io/cheatsheet/
 # font is installed in ~/.fonts
-set $workspace1 "1: Browse "
-set $workspace2 "2: Edit "
-set $workspace3 "3: Music "
-set $workspace4 "4: Chat "
-set $workspace5 "5: Game "
-set $workspace6 "6: Productivity "
+set $workspace1 "1 "
+set $workspace2 "2 "
+set $workspace3 "3 "
+set $workspace4 "4 "
+set $workspace5 "5 "
+set $workspace6 "6 "
+set $workspace7 "7: Game "
+set $workspace8 "8: Music "
+set $workspace9 "9: Chat "
+set $workspace10 "10: Productivity"
 
 # switch to workspace
 # You can replace these numbers with whatever name you want
@@ -117,10 +121,10 @@ bindsym $mod+3 workspace $workspace3
 bindsym $mod+4 workspace $workspace4
 bindsym $mod+5 workspace $workspace5
 bindsym $mod+6 workspace $workspace6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+7 workspace $workspace7
+bindsym $mod+8 workspace $workspace8
+bindsym $mod+9 workspace $workspace9
+bindsym $mod+0 workspace $workspace10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $workspace1
@@ -129,10 +133,10 @@ bindsym $mod+Shift+3 move container to workspace $workspace3
 bindsym $mod+Shift+4 move container to workspace $workspace4
 bindsym $mod+Shift+5 move container to workspace $workspace5
 bindsym $mod+Shift+6 move container to workspace $workspace6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+7 move container to workspace $workspace7
+bindsym $mod+Shift+8 move container to workspace $workspace8
+bindsym $mod+Shift+9 move container to workspace $workspace9
+bindsym $mod+Shift+0 move container to workspace $workspace10
 
 
 set $primary "DP-2"
@@ -141,10 +145,14 @@ set $secondary "HDMI-0"
 # Assign workspaces to screens
 workspace $workspace1 output $primary
 workspace $workspace2 output $primary
-workspace $workspace3 output $secondary
-workspace $workspace4 output $secondary
+workspace $workspace3 output $primary
+workspace $workspace4 output $primary
 workspace $workspace5 output $primary
-workspace $workspace6 output $secondary
+workspace $workspace6 output $primary
+workspace $workspace7 output $secondary
+workspace $workspace8 output $secondary
+workspace $workspace9 output $secondary
+workspace $workspace0 output $secondary
 
 
 # reload the configuration file
@@ -245,22 +253,15 @@ bindsym XF86AudioPrev exec playerctl previous
 # this one has an error in it and I don't know why
 # xrandr --output DVI-D-0 --off --output HDMI-0 --mode 2560x1080 --pos 416x1440 --rotate normal --output DP-5 --off --output DP-4 --off --output DP-3 --off --output DP-2 --primary --mode 3440x1440 --pos 0x0 --rotate inverted --output DP-1 --off --output DP-0 --off
 
-# Browse
-assign [class="chromium-browser"] $workspace1
-
-# Edit
-assign [class="Code"] $workspace2
-
 # Music
-assign [class="Spotify"] $workspace3
+assign [class="Spotify"] $workspace8
 
 # Chat
-assign [class="Slack"] $workspace4
-assign [class="discord"] $workspace4
-# assign [title="Messenger - Mozilla Firefox"] $workspace4
+assign [class="Slack"] $workspace9
+assign [class="discord"] $workspace9
 
 # Game
-assign [class="Steam"] $workspace5
+assign [class="Steam"] $workspace7
 
 
 # Automatically load things with i3
