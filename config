@@ -282,7 +282,7 @@ exec --no-startup-id discord
 
 
 # Compton but this doesn't work so I need to fix it
-exec --no-startup-id compton -f -I 0.045 -O 0.05 -c -o 0.6 -r 6 -l -6 -t -6
+exec --no-startup-id compton -f -I 0.045 -O 0.05 -c -o 0.6 -r 6 -l -6 -t -6 -i 0.85 --inactive-dim 0.05
 
 # Set wallpaper
 # --bg-scale scales wallpaper. "man feh" for others
