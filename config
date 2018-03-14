@@ -38,6 +38,9 @@ bindsym $mod+Shift+q kill
 # Open GUI file browser
 bindsym $mod+n exec nautilus
 
+# Open chromium browser
+bindsym $mod+c exec chromium-browser
+
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -254,7 +257,7 @@ bindsym XF86AudioPrev exec playerctl previous
 # xrandr --output DVI-D-0 --off --output HDMI-0 --mode 2560x1080 --pos 416x1440 --rotate normal --output DP-5 --off --output DP-4 --off --output DP-3 --off --output DP-2 --primary --mode 3440x1440 --pos 0x0 --rotate inverted --output DP-1 --off --output DP-0 --off
 
 # Music
-assign [class="Spotify"] $workspace8
+assign [class="spotify"] $workspace8
 
 # Chat
 assign [class="Slack"] $workspace9
@@ -282,7 +285,9 @@ exec --no-startup-id discord
 
 
 # Compton but this doesn't work so I need to fix it
-exec --no-startup-id compton -f -I 0.045 -O 0.05 -c -o 0.6 -r 6 -l -6 -t -6 -i 0.85 --inactive-dim 0.05
+exec --no-startup-id compton -f -I 0.045 -O 0.05 -c -o 0.6 -r 6 -l -6 -t -6 
+# Compton transparency adds these args:
+# -i 0.85 --inactive-dim 0.05
 
 # Set wallpaper
 # --bg-scale scales wallpaper. "man feh" for others
