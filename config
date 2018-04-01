@@ -149,13 +149,13 @@ set $secondary "HDMI-0"
 workspace $workspace1 output $primary
 workspace $workspace2 output $primary
 workspace $workspace3 output $primary
-workspace $workspace4 output $primary
-workspace $workspace5 output $primary
-workspace $workspace6 output $primary
+workspace $workspace4 output $secondary
+workspace $workspace5 output $secondary
+workspace $workspace6 output $secondary
 workspace $workspace7 output $secondary
 workspace $workspace8 output $secondary
 workspace $workspace9 output $secondary
-workspace $workspace0 output $secondary
+workspace $workspace10 output $secondary
 
 
 # reload the configuration file
